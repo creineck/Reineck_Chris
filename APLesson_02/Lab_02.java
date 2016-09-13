@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Lab_02
 {
 	public static void main(String[]args)
@@ -17,9 +19,10 @@ public class Lab_02
 		
 		System.out.println(name+address+city+zip);
 		
-		int l = 8;
-		int w = 5;
-		int h = 10;
+		Random number = new Random();
+		int l = number.nextInt(10) + 1;
+		int w = number.nextInt(10) + 1;
+		int h = number.nextInt(10) + 1;
 		
 		int surArea = (((l*w)+(l*h)+(w*h))*2);
 		
