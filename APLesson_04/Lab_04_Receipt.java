@@ -32,11 +32,21 @@ public class Lab_04_Receipt
 		form.Receipt(item2, price2);
 		form.Receipt(item3, price3);
 		
-		
+		double subtotal = price1+price2+price3;
+		double tax = .1*subtotal;
+		double total = tax+subtotal;
+		String sub = "Subtotal: ";
+		String tex = "Tax: ";
+		String tot = "Total: ";
+		System.out.printf("\n*   %8s........     %6.2f \n", sub, subtotal);
+		System.out.printf("*    %8s........     %6.2f \n", tex, tax);
+		System.out.printf("*    %8s........     %6.2f \n", tot, total);
+		System.out.println("-------------------------------------");
+		System.out.println(" *Thank you for your support *");
 	}
 	
 	public void Receipt(String item, double price)
 	{
-		System.out.printf("* %20s ........     %6.2f \n", item, price);
+		System.out.printf("*    %7s ........     %6.2f \n", item, price);
 	}
 }
