@@ -17,7 +17,7 @@ public class Lab_04_Subwoofer
 		int height = keyboard.nextInt();
 		
 		double volume = form.calcVol(length, width, height);
-		System.out.printf("The volume of your subwoofer box is %10.2f cubic feet", volume);
+		System.out.printf("The volume of your subwoofer box is %10.3f cubic feet", volume);
 	}
 	public double calcVol(double l, double w, double h)
 	{
