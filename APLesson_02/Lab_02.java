@@ -12,12 +12,11 @@ public class Lab_02
 		
 		System.out.println("\n");
 		
-		String name = "Chris \n";
-		String address = "505 Amigo Lane, ";
-		String city = "Del Mar \n";
-		String zip = "92015";
+		String name = "Chris Reineck\n";
+		String address = "505 Amigo Lane\n";
+		String city = "Del Mar, CA 92015";
 		
-		System.out.println(name+address+city+zip);
+		System.out.println(name+address+city);
 		
 		Random number = new Random();
 		int l = number.nextInt(10) + 1;
