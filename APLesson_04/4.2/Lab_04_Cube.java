@@ -9,7 +9,6 @@ public class Lab_04_Cube
 		Scanner keyboard = new Scanner(System.in);
 		System.out.println("Please input the length of a side on your cube: ");
 		side = keyboard.nextDouble();
-		calcSurf();
 		print();
 	}
 	public static double calcSurf()
@@ -18,6 +17,6 @@ public class Lab_04_Cube
 	}
 	public static void print()
 	{
-		System.out.printf("The surface area of a cube with a side with the length of "+side+" is %.5f", calcSurf());
+		System.out.printf("The surface area of a cube with 12 sides is %.2f", calcSurf());
 	}
 }
