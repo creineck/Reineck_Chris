@@ -18,10 +18,10 @@ public class Lab_04_Rectangle
 	}
 	public static void print()
 	{
-		System.out.println("Your rectangle is "+ calcPerim()+" feet around");
+		System.out.println("Your rectangle is "+ perimeter+" feet around");
 	}
-	public static int calcPerim()
+	public static void calcPerim()
 	{
-		return (2* (length + width));
+		perimeter= (2* (length + width));
 	}
 }
