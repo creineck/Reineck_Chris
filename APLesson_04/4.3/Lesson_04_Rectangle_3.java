@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
-public class Lab_04_Rectangle
+public class Lesson_04_Rectangle_3
 {
-	static double length;
-	static double width;
-	static double perimeter;
+	static int length;
+	static int width;
+	static int perimeter;
 	
 	public static void main(String[]args)
 	{
@@ -13,15 +13,14 @@ public class Lab_04_Rectangle
 		length = keyboard.nextInt();
 		System.out.println("What is the width of your rectangle: ");
 		width = keyboard.nextInt();
-		calcPerim();
 		print();
 	}
 	public static void print()
 	{
-		System.out.println("Your rectangle is "+ perimeter+" feet around");
+		System.out.println("Your rectangle is "+ calcPerim()+" feet around");
 	}
-	public static void calcPerim()
+	public static int calcPerim()
 	{
-		perimeter = (2* (length + width));
+		return (2* (length + width));
 	}
 }

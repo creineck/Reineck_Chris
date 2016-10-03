@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Lab_04_Average
+public class Lesson_04_Average_3
 {
 	static double num1;
 	static double num2;
@@ -23,10 +23,10 @@ public class Lab_04_Average
 	}
 	public static void print()
 	{
-		System.out.printf("The average of " + num1+ ", "+num2+", and "+num3+" is %.2f", avg);
+		System.out.printf("The average of " + num1+ ", "+num2+", and "+num3+" is %.2f", average());
 	}
-	public static void average()
+	public static double average()
 	{
-		avg =((num1+num2+num3)/3);
+		return ((num1+num2+num3)/3);
 	}
 }

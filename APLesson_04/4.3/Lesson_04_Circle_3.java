@@ -1,24 +1,21 @@
 import java.util.Scanner;
 
-public class Lab_04_Circle
+public class Lesson_04_Circle_3
 {
 	static double r;
-	static double area;
 	public static void main(String[]args)
 	{
 		Scanner keyboard = new Scanner(System.in);
 		System.out.println("What is the radius of your circle:");
 		r = keyboard.nextDouble();
-		calcArea();
 		print();
 	}
-	public static void calcArea()
+	public static double calcArea()
 	{
-		area =(r*r*3.14);
-		
+		return (r*r*3.14);
 	}
 	public static void print()
 	{
-		System.out.println("The area of a circle with a radius of "+r+" is "+area+".");
+		System.out.println("The area of a circle with a radius of "+r+" is "+calcArea()+".");
 	}
 }
