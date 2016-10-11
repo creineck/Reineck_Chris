@@ -24,7 +24,7 @@ public class Lab_05_Exercise2
 		System.out.println("Please input another item: ");
 		String item3 = keyboard.nextLine();
 		
-		System.out.println("What is the price");
+		System.out.println("What is the price?");
 		double price3 = keyboard.nextDouble();
 		
 		keyboard.nextLine();
@@ -37,7 +37,7 @@ public class Lab_05_Exercise2
 		double subtotal = price1 + price2 + price3 + price4;
 		discount(subtotal);
 		double tax = subtotal*0.15;
-		format(item1, price1, item2, price2, item3, price3, item4, price4);
+		format(item1, price1, item2, price2, item3, price3, item4, price4, subtotal, tax);
 		
 	}
 	public static void discount(double subtotal)
@@ -52,20 +52,20 @@ public class Lab_05_Exercise2
 			subtotal = subtotal;
 		}
 	}
-	public static void format(String item, double price, String item2, double price2, String item3, double price3, String item4, double price4, double subtotal, double discount)
+	public static void format(String item, double price, String item2, double price2, String item3, double price3, String item4, double price4, double subtotal, double tax)
 	{
-		System.out.printf("*   %8s.......    %6.2f *", item, price);
-		System.out.printf("*   %8s.......    %6.2f *", item2, price2);
-		System.out.printf("*   %8s.......    %6.2f *", item3, price3);
-		System.out.printf("*   %8s.......    %6.2f *", item4, price4);
-		System.out.printf("*   Subtotal.......    %6.2f *", subtotal);
+		System.out.printf("*   %8s.......    $%6.2f *", item, price);
+		System.out.printf("\n*   %8s.......    $%6.2f *", item2, price2);
+		System.out.printf("\n*   %8s.......    $%6.2f *", item3, price3);
+		System.out.printf("\n*   %8s.......    $%6.2f *", item4, price4);
+		System.out.printf("\n*   Subtotal.......    $%6.2f *", subtotal);
 		if (discounted)
 		{
-			System.out.printf("*   Discount.......    %6.2f *", subtotal*0.15);
+			System.out.printf("\n*   Discount.......    $%6.2f *", tax);
 		}
 		if (!discounted)
 		{
-			System.out.printf("*   Discount.......    There is no discount");
+			System.out.printf("\n*   Discount.......    There is no discount");
 		}
 		System.out.println("Thanks for visiting!");
 	
