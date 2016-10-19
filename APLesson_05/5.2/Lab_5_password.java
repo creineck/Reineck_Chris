@@ -6,8 +6,6 @@ public class Lab_5_password
 	public static void main(String[]args)
 	{
 		kb = new Scanner(System.in);
-		String username = "username";
-		String password = "password";
 		passCheck();
 	}
 	public static void passCheck()
