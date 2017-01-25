@@ -16,7 +16,7 @@ public class Lab_09_ReverseWord {
 		reverse(words);
 	}
 	public static void reverse(String[] words) {
-		for (int i = words.length-1; i < words.length; i--) {
+		for (int i = words.length - 1; i >= 0; i--) {
 			System.out.println(words[i]);
 		}
 	}

@@ -3,8 +3,10 @@ public class Lab_09_GetOdds {
 	public static void main(String[]args) {
 		numbers = new int[10];
 		fillArray();
-		System.out.print("For the following numbers... "+printArray());
-		System.out.println(getOdds(numbers) +" are the odd numbers");
+		System.out.print("For the following numbers... ");
+		printArray();
+		System.out.println("The odd numbers are:");
+		getOdds(numbers);
 	}
 	public static void fillArray() {
 		for (int i = 0; i < numbers.length; i++) {
@@ -16,15 +18,12 @@ public class Lab_09_GetOdds {
 			System.out.print(num + " ");
 		}
 	}
-	public static int[] getOdds(int[] odd) {
+	public static void getOdds(int[] odd) {
 		int[] odds = new int[10];
 		for (int num:numbers) {
 			if (num%2==1) {
-				for (int i = 0; i < numbers.length; i++) {
-					odds[i] = num;
-				}		
+				System.out.print(num + " ");
 			}
 		}
-		return odds;
 	}
 }
