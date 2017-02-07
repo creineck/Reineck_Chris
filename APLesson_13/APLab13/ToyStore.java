@@ -1,25 +1,40 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 public class ToyStore {
-	private ArrayList<Toy> toyList;
+	private ArrayList<Toy> toylist = new ArrayList<>();
 	//constructors
 	public ToyStore() {
 		
 	}
-	public ToyStore(String p) {
-		
+	public ToyStore(String ts) {
+
 	}
-	public loadToys(String ts) {
-		ts.split(" , ");
+	public String loadToys(String ts) {
+		ArrayList<String> toys = new ArrayList<>(Arrays.asList(ts.split(", ")));
 		for (int i = 0; i < ts.length; i++) {
-			String name = ts[i];
-			String type = ts[i + 1];
-			Toy toy = new Toy(name);
-			if ()
+			String name = toys.(i);
+			String type = toys.(i + 1);
+			Toy toy = this.getThatToy();
+			if (bar == null) {
+				if (type.equals("car")) {
+					toylist.add(new Car(n));
+				}
+				else if (type.eqauls("AF")) {
+					toylist.add(new AFigure(n))
+				}
+			}
+			else {
+				toy.setCount(toy.getCount() + 1);
+			}
 		}
 	}
-	public getThatToy() {
-		
+	public String getThatToy(String nm) {
+		for (String toy : toyList) {
+			if (toy.equals("nm")) {
+				return toy;
+			}
+		}
+		return "";
 	}
 	public getMostFrequentToy() {
 		String name = "";
@@ -51,6 +66,6 @@ public class ToyStore {
 			return "Equal amounts of action figures and cars!";
 	}
 	public toString() {
-		return toyList;
+		return ;
 	}
 }
