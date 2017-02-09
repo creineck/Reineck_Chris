@@ -2,25 +2,22 @@ import java.util.ArrayList;
 import java.util.Arrays;
 public class ToyStore {
 	private ArrayList<Toy> toylist = new ArrayList<>();
-	//constructors
-	public ToyStore() {
-		
-	}
+	public ToyStore() {}
 	public ToyStore(String ts) {
-
+		loadToys(ts);
 	}
-	public String loadToys(String ts) {
+	public void loadToys(String ts) {
 		ArrayList<String> toys = new ArrayList<>(Arrays.asList(ts.split(", ")));
-		for (int i = 0; i < ts.length; i++) {
-			String name = toys.(i);
-			String type = toys.(i + 1);
-			Toy toy = this.getThatToy();
-			if (bar == null) {
-				if (type.equals("car")) {
-					toylist.add(new Car(n));
+		for (int i = 0; i < toys.size(); i+=2) {
+			String name = toys.get(i);
+			String type = toys.get(i + 1);
+			Toy toy = this.getThatToy(name);
+			if (toy == null) {
+				if (type.equals("Car")) {
+					toylist.add(new Car(name));
 				}
-				else if (type.eqauls("AF")) {
-					toylist.add(new AFigure(n))
+				else if (type.equals("AF")) {
+					toylist.add(new AFigure(name));
 				}
 			}
 			else {
@@ -28,44 +25,44 @@ public class ToyStore {
 			}
 		}
 	}
-	public String getThatToy(String nm) {
-		for (String toy : toyList) {
-			if (toy.equals("nm")) {
+	public Toy getThatToy(String nm) {
+		for (Toy toy : toylist) {
+			if (toy.getName().equals(nm)) {
 				return toy;
 			}
 		}
-		return "";
+		return null;
 	}
-	public getMostFrequentToy() {
+	public String getMostFrequentToy() {
 		String name = "";
-		int max = Integer;
-		for (int toy : toylist) {
-			if (max < count) {
-				max = count;
-				name = toylist[max];
+		int max = Integer.MIN_VALUE;
+		for (Toy toy : toylist) {
+			if (max < toy.getCount()) {
+				max = toy.getCount();
+				name = toy.getName();
 			}
 		}
-		return name;
+		return "Most Frequent Toy: " + name;
 	}
-	public getMostFrequentType() {
+	public String getMostFrequentType() {
 		int cars = 0;
 		int figures = 0;
-		for (int toy : toylist) {
-			if (toy.equals("car")) {
-				car++;
+		for (Toy toy : toylist) {
+			if (toy.getType().equals("Car")) {
+				cars++;
 			}
-			if (toy.equals("AF")) {
+			if (toy.getType().equals("AF")) {
 				figures++;
 			}
 		}
 		if (cars > figures)
-			return "cars";
-		if (figures > cars)
-			return "action figures";
+			return "Most Frequent Type of Toy: Cars";
+		else if (figures > cars)
+			return "Most Frequent Type of Toy: Action Figures";
 		else 
 			return "Equal amounts of action figures and cars!";
 	}
-	public toString() {
-		return ;
+	public String toString() {
+		return toylist + "";
 	}
 }
