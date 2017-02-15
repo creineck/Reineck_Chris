@@ -1,4 +1,5 @@
-public class PlayStation {
+public class PlayStation extends Console
+{
 	public PlayStation() {
 		super();
 	}

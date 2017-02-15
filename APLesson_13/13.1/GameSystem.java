@@ -18,6 +18,6 @@ public abstract class GameSystem {
 	}
 	public String toString()
 	{
-		return "Platform: " + platform + "\nSerial #: " + serialNo;
+		return "\nPlatform: " + platform + "\nSerial #: " + serialNo;
 	}
 }
