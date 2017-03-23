@@ -1,17 +1,15 @@
 import java.util.ArrayList;
 public class Satellite {
     public static void main(String[]args) {
-		
         ArrayList<Location> locate = new ArrayList<>();
-        
         double[] honLoc = {5, 6};
         locate.add(new Honda(honLoc));
         locate.add(new Toyota("8, 9"));
         locate.add(new GMC(3, 8));
-        int i = 0;
         for(Location loc : locate) {
-        	loc.move(positions[i], positions[i+1]);
-        	i += 2;
+			double one = Math.random()* 99 + 1;
+			double two = Math.random()* 99 + 1;
+        	((Car)loc).move(one, two);
         }
         double[] home = {0, 0};
         String printout = "\n\n" + "==========================" + "\nStarting locations...";
@@ -24,7 +22,7 @@ public class Satellite {
 			double two = Math.random()* 99 + 1;
 			double [] l = {one, two};
 			((Car)loc).move(one, two);
-            printout += "\nAfter " + loc.getID() + " moved " + getLocation(l);
+            printout += "\nAfter " + loc.getID() + " moved " + getLocation(l)
             + "\nNew location: " + getLocation(loc.getLoc());
         }
         printout += "\n\n" + "==========================" + "\nDistance from home...";
