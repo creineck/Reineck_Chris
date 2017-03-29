@@ -13,8 +13,10 @@ public class Magpie2
 	 * 	@return a response based on the rules given */
 	public String getResponse(String statement)
 	{
-		String response = "";
-
+		String response = statement;
+		if (response.equals("")) {
+			return "Say something, please";
+		}
 		/** Exercise_01:
 		 * ==================================================
 		 * 	Code that asks the user "Say something, please."
@@ -26,7 +28,7 @@ public class Magpie2
 		/** To be completed in Exercise_02:
 		 * 	Modify the following code to use the findKeyword
 		 * 	Method (details in "Exercise_02" below. */
-		if (statement.indexOf("no") >= 0)
+		if (findKeyword(statement, "no") >= 0)
 		{
 			response = "Why so negative?";
 		}
@@ -61,6 +63,27 @@ public class Magpie2
 	 * ========================================================= */
 	private int findKeyword(String statement, String goal, int startPos)
 	{
+		String phrase = statement;
+		phrase = phrase.trim();
+		phrase = phrase.toLowerCase();
+		goal = goal.toLowerCase();
+		
+		int psn = phrase.indexOf(goal, startPos);
+		while (psn >= 0) { 
+			String before = "";
+			String after = "";
+			if (psn > 0) {
+				before = phrase.substring(psn - 1, psn);
+			}
+			if (psn + goal.length() < phrase.length()) {
+				after = phrase.substring(psn + goal.length(), psn + goal.length() + 1);
+			}
+			if ((before.compareTo("a") < 0 || before.compareTo("z") > 0) && 
+				(after.compareTo("a") < 0 || after.compareTo("z") > 0)) {
+				return psn;
+			}
+			psn = phrase.indexOf(goal, psn+1);
+		}
 		/* New String variable phrase = a more searchable version of statement.
 		 	-Use a combination of trim() and toLowerCase() modify statement.
 
