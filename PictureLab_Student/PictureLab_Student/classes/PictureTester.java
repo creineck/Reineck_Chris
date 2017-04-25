@@ -73,8 +73,14 @@ public class PictureTester
   public static void testMirrorArms() {
 	  Picture snowman = new Picture("snowman.jpg");
 	  snowman.explore();
-	  snowman.mirrorTemple();
+	  snowman.mirrorArms();
 	  snowman.explore();
+  }
+  public static void testMirrorGull() {
+	  Picture seagull = new Picture("seagull.jpg");
+	  seagull.explore();
+	  seagull.mirrorGull();
+	  seagull.explore();
   }
   /** Method to test the collage method */
   public static void testCollage()
@@ -90,6 +96,12 @@ public class PictureTester
     Picture swan = new Picture("swan.jpg");
     swan.edgeDetection(10);
     swan.explore();
+  }
+  public static void testNewCopy() {
+	Picture flower = new Picture("flower1.jpg");
+	flower.explore();
+	flower.copyNew(flower, 12, 70, 24, 46);
+	flower.explore();
   }
   
   /** Main method for testing.  Every class can have a main
@@ -128,5 +140,7 @@ public class PictureTester
 	testMirrorHorizontal();
 	testMirrorHorizontalBotToTop();
 	testMirrorArms();
+	testMirrorGull();
+	testNewCopy();
   }
 }
