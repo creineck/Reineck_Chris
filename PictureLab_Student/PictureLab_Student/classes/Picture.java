@@ -244,7 +244,7 @@ public class Picture extends SimplePicture
       }
     }   
   }
-  public void copyNew(Picture fromPic, int startRow, int endRow, int startCol)
+  public void copyNew(Picture fromPic, int startRow, int endRow, int startCol, int endCol)
   {
     Pixel fromPixel = null;
     Pixel toPixel = null;
@@ -252,12 +252,12 @@ public class Picture extends SimplePicture
     Pixel[][] fromPixels = fromPic.getPixels2D();
     for (int fromRow = 0, toRow = startRow; 
          fromRow < fromPixels.length &&
-         toRow < toPixels.length; 
+         toRow < endRow; 
          fromRow++, toRow++)
     {
       for (int fromCol = 0, toCol = startCol; 
            fromCol < fromPixels[0].length &&
-           toCol < toPixels[0].length;  
+           toCol < endCol;  
            fromCol++, toCol++)
       {
         fromPixel = fromPixels[fromRow][fromCol];
@@ -282,6 +282,13 @@ public class Picture extends SimplePicture
     this.copy(flower2,500,0);
     this.mirrorVertical();
     this.write("collage.jpg");
+  }
+  public void myCollage() {
+	Picture barbaraS = new Picture("barbaraS.jpg");
+    this.copyNew(barbaraS,24, 89, 30, 80);
+    flowerNoBlue.zeroBlue();
+    this.mirrorVertical();
+    this.write("myCollage.jpg");
   }
   
   
@@ -355,6 +362,9 @@ public class Picture extends SimplePicture
         rightPixel.setColor(leftPixel.getColor());
       }
     }
+  }
+  public void edgeDetection2(int edgeDist) {
+	  
   }
   
   

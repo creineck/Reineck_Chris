@@ -100,8 +100,14 @@ public class PictureTester
   public static void testNewCopy() {
 	Picture flower = new Picture("flower1.jpg");
 	flower.explore();
-	flower.copyNew(flower, 12, 70, 24, 46);
+	flower.copyNew(flower, 0, 23, 0, 38);
 	flower.explore();
+  }
+  public static void testMyCollage() {
+	  Picture barbaraS = new Picture("barbaraS.jpg");
+	  barbaraS.explore();
+	  barbaraS.myCollage();
+	  barbaraS.explore();
   }
   
   /** Main method for testing.  Every class can have a main
@@ -142,5 +148,6 @@ public class PictureTester
 	testMirrorArms();
 	testMirrorGull();
 	testNewCopy();
+	testMyCollage();
   }
 }
