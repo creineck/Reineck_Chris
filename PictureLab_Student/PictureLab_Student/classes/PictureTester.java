@@ -103,6 +103,13 @@ public class PictureTester
 	flower.copyNew(flower, 0, 23, 0, 38);
 	flower.explore();
   }
+  public static void testEdgeDetection2()
+  {
+    Picture swan = new Picture("swan.jpg");
+	swan.explore();
+    swan.edgeDetection2(10);
+    swan.explore();
+  }
   public static void testMyCollage() {
 	  Picture barbaraS = new Picture("barbaraS.jpg");
 	  barbaraS.explore();
@@ -149,5 +156,7 @@ public class PictureTester
 	testMirrorGull();
 	testNewCopy();
 	testMyCollage();
+	testEdgeDetection();
+	testEdgeDetection2();
   }
 }

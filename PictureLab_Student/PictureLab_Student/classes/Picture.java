@@ -283,14 +283,12 @@ public class Picture extends SimplePicture
     this.mirrorVertical();
     this.write("collage.jpg");
   }
-  public void myCollage() {
-	Picture barbaraS = new Picture("barbaraS.jpg");
-    this.copyNew(barbaraS,24, 89, 30, 80);
-    flowerNoBlue.zeroBlue();
-    this.mirrorVertical();
-    this.write("myCollage.jpg");
+  public void myCollage()
+  {
+    Picture barbaraS = new Picture("barbaraS.jpg");
+    this.copyNew(barbaraS, 27, 91, 33, 81);
+    this.write("collage.jpg");
   }
-  
   
   /** Method to show large changes in color 
     * @param edgeDist the distance for finding edges
@@ -364,7 +362,27 @@ public class Picture extends SimplePicture
     }
   }
   public void edgeDetection2(int edgeDist) {
-	  
+	Pixel bottomPixel = null;
+	Pixel leftPixel = null;
+    Pixel rightPixel = null;
+    Pixel[][] pixels = this.getPixels2D();
+    Color rightColor = null;
+	Color bottomColor = null;
+    for (int row = 0; row < pixels.length -1; row++)
+    {
+      for (int col = 0; col < pixels[0].length-1; col++)
+      {
+        leftPixel = pixels[row][col];
+        rightPixel = pixels[row][col+1];
+		bottomPixel = pixels[row+1][col];
+        rightColor = rightPixel.getColor();
+		bottomColor = bottomPixel.getColor();
+		if (leftPixel.colorDistance(rightColor) > edgeDist || leftPixel.colorDistance(bottomColor) > edgeDist)
+          leftPixel.setColor(Color.BLACK);
+        else 
+          leftPixel.setColor(Color.WHITE);
+      }
+    }
   }
   
   
