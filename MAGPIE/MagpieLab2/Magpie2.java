@@ -14,7 +14,7 @@ public class Magpie2
 	public String getResponse(String statement)
 	{
 		String response = statement;
-		if (response.equals("")) {
+		if (response.equals("") || response.equals(" ")) {
 			return "Say something, please";
 		}
 		/** Exercise_01:
@@ -32,11 +32,18 @@ public class Magpie2
 		{
 			response = "Why so negative?";
 		}
+		else if (findKeyword(statement, "dog") >= 0
+				|| findKeyword(statement, "cat") >= 0
+				|| findKeyword(statement, "lizard") >= 0
+				|| findKeyword(statement, "fish") >= 0)
+		{
+			response = "Tell me more about your pet.";
+		}
 
-		else if (statement.indexOf("mother") >= 0
-				|| statement.indexOf("father") >= 0
-				|| statement.indexOf("sister") >= 0
-				|| statement.indexOf("brother") >= 0)
+		else if (findKeyword(statement, "mother") >= 0
+				|| findKeyword(statement, "father") >= 0
+				|| findKeyword(statement, "brother") >= 0
+				|| findKeyword(statement, "sister") >= 0 )
 		{
 			response = "Tell me more about your family.";
 		}
@@ -84,7 +91,7 @@ public class Magpie2
 		}
 		int psn = findKeyword(statement, "I want to");
 		String restOfStatement = statement.substring(psn + 9, statement.length());
-		return "What would it mean to" + restOfStatement;
+		return "What would it mean to" + restOfStatement + "?";
 		/**
 		* trim the statement
 		* variable lastChar = last character in statement
@@ -98,7 +105,6 @@ public class Magpie2
 		* /
 		* return "What would it mean to" + restOfStatement; **/	
 	}
-	
 	private String transformYouMeStatement(String statement) {
 		statement = statement.trim();
 		String lastChar = statement.substring(statement.length()-1, statement.length());
@@ -135,17 +141,15 @@ public class Magpie2
 		int psnofI = findKeyword(statement, "I");
 		int psnofYou = findKeyword(statement, "you", psnofI + 2);
 		String restOfStatement = statement.substring(psnofI + 2, psnofYou);
-		return "Why do you " + restOfStatement + "me";
+		return "Why do you " + restOfStatement + "me?";
 	}
 
 	/** Ex_02: The findKeyword() Method...
 	 * ========================================================= */
 	private int findKeyword(String statement, String goal, int startPos)
 	{
-		String phrase = statement;
-		phrase = phrase.trim();
-		phrase = phrase.toLowerCase();
-		goal = goal.toLowerCase();
+		String phrase = statement.trim().toLowerCase();
+		goal = goal.trim().toLowerCase();
 		
 		int psn = phrase.indexOf(goal, startPos);
 		while (psn >= 0) { 
